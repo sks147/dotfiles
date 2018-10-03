@@ -1,0 +1,1 @@
+First setup of i3wm on macbook pro.
