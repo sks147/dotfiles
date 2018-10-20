@@ -143,6 +143,11 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
 }
 
+# exec_always xinput set-prop <device id> <property id> 1
+# xinput list
+exec_always xinput set-prop 12 276 1 #Tap to click
+exec_always xinput set-prop 12 284 1 #Natural Scrolling
+
 # Pulse Audio controls $ pactl list sinks
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
