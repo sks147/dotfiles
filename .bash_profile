@@ -1,1 +1,0 @@
-manjaro/bash/.bash_profile
