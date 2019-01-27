@@ -1,4 +1,5 @@
 # https://i3wm.org/docs/userguide.html
+# stow i3 -vt ~/.config/i3/
 set $mod Mod4
 # Font for window titles, bar 
 # Install from AUR : yay otf-san-francisco
@@ -119,28 +120,28 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+  # These bindings trigger as soon as you enter the resize mode
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym l resize shrink height 10 px or 10 ppt
+  bindsym semicolon resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  # same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+  # back to normal: Enter or Escape or $mod+r
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
 }
 
 # exec_always xinput set-prop <device id> <property id> 1
@@ -149,14 +150,14 @@ exec_always xinput set-prop 12 276 1 #Tap to click
 exec_always xinput set-prop 12 284 1 #Natural Scrolling
 
 # Pulse Audio controls $ pactl list sinks
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% 
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
 # Brightness controls
 # pacman -S xorg-xbacklight
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # mount drive to hdd
 exec mount -t ntfs /dev/sda2 /hdd

@@ -1,0 +1,1 @@
+manjaro/zsh/.zshrc
