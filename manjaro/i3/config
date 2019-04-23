@@ -4,7 +4,7 @@ set $mod Mod4
 # Font for window titles, bar 
 # Install from AUR : yay otf-san-francisco
 # font pango:SF Pro Text 12
-font pango:DejaVu Sans Mono 12
+font pango:SF Pro Text 12
 # space efficient bitmap font
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
