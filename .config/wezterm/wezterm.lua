@@ -2,10 +2,13 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 -- Shell (matching iTerm2: /opt/homebrew/bin/bash)
-config.default_prog = { "/opt/homebrew/bin/bash" }
+config.default_prog = { "/opt/homebrew/bin/bash", "--login" }
 
 -- Font (matching iTerm2: MesloLGS Nerd Font Regular 20pt, ligatures enabled)
-config.font = wezterm.font("MesloLGS NF")
+config.font = wezterm.font_with_fallback({
+  "Menlo",
+  "Monaco"
+})
 config.font_size = 20.0
 config.harfbuzz_features = { "calt=1", "clig=1", "liga=1" }
 
