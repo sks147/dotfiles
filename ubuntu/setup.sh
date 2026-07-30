@@ -5,6 +5,9 @@ sudo apt install curl build-essential -y
 sudo apt install openssh-server -y
 sudo systemctl enable --now ssh
 
+# install vim
+sudo apt install vim -y
+
 # setup git
 sudo apt install git -y
 git config --global user.name "sks147"
